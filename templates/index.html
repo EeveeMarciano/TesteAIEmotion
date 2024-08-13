@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebEmotiSensor</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">WebEmotiSensor</h1>
+        <div class="row mt-4">
+            <div id="webcam-container" class="col-md-5 text-center">
+                <video id="webcam" autoplay playsinline class="border"></video>
+                <canvas id="canvas" style="display: none;"></canvas>
+            </div>
+            <div id="chat-container" class="col-md-7">
+                <div id="chat-box" class="border rounded p-3 mb-3" style="height: 300px; overflow-y: scroll;">
+                    <!-- Mensagens do chat aparecerão aqui -->
+                </div>
+                <div class="input-group">
+                    <input type="text" id="user-input" class="form-control" placeholder="Digite sua mensagem aqui">
+                    <div class="input-group-append">
+                        <button id="send-button" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
